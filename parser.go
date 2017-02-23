@@ -36,6 +36,7 @@ func readFile(path string) {
 	VideoSizes = make([]int, V)
 	Endpoints = make([]Endpoint, E)
 	Requests = make([]Request, R)
+	freeSpace = make([]int, C)
 
 	// 2. Parse second line
 	line, _ = reader.ReadString('\n')

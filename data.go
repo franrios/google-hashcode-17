@@ -65,10 +65,26 @@ type Request struct {
 type Possibility struct {
 	Rv     int // ID of the requested video
 	Re     int // ID of the endpoint from which the requests are coming from
+	Rn     int // the number of requests
 	Score  int //= Rn * VideoSizes[thisone]  == (the number of requests * size)
 	Server *CacheServer
 }
 
+type EndpointSlice []Endpoint
+
+var freeSpace []int
+
+/*
+func (a EndpointSlice)seek(i int){
+	length := len(a)
+	for index := 0; index < length; index++ {
+		if i==a[i]. {
+
+		}
+	}
+	return -1
+}
+*/
 // MORE DATA
 var Possibilities PossibilitySlice
 var ChosenPossibilities PossibilitySlice
