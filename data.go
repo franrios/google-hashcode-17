@@ -63,12 +63,16 @@ type Request struct {
 }
 
 type Possibility struct {
-	Rv int // ID of the requested video
-	Re int // ID of the endpoint from which the requests are coming from
-
-	score int //= Rn * VideoSizes[thisone]  == (the number of requests * size)
+	Rv     int // ID of the requested video
+	Re     int // ID of the endpoint from which the requests are coming from
+	Score  int //= Rn * VideoSizes[thisone]  == (the number of requests * size)
+	Server *CacheServer
 }
 
 // MORE DATA
-var Possibilities []Possibility
+var Possibilities PossibilitySlice
+var ChosenPossibilities PossibilitySlice
+
+type PossibilitySlice []Possibility
+
 var VideoReproductions []int
